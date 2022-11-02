@@ -1,0 +1,149 @@
+
+.walletContainer{
+    margin-top: 30px;
+    .walletContent{
+        .card{
+            background: linear-gradient(45deg, royalblue,rgb(90, 205, 203),rgb(148, 90, 205));
+            margin-bottom: 30px;
+            padding: 20px;
+            width:  calc( 50% - 20px);
+            border-radius: 15px;
+            color: white;
+            box-shadow: 0px 0px 20px rgba(90, 205, 203, 0.436);
+        }
+        .coinContainer{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 20px;
+            .coinCard{
+                background-color: var(--componentBackGroundColor);
+                padding: 20px;
+                border-radius: 15px;
+                img{
+                    width: 60px;
+                    margin-bottom: 10px;
+                }
+                .ammount{
+                    font-weight: 500;
+                    text-align: right;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}
+
+.coinContainer{
+    margin-top: 30px;
+    .card{
+        background-color: var(--componentBackGroundColor);
+        width: 50%;
+        padding: 30px;
+        border-radius: 15px;
+        display: flex;
+        @include flexDisplay(center, center, column); 
+        img{
+            width: 100px;
+        }
+        h3{
+            margin-top: 10px;
+        }
+    }
+    .coinChart{
+        background-color: var(--componentBackGroundColor);
+        width: 100%;
+        padding: 30px;
+        border-radius: 15px;
+        margin-top: 30px;
+        height: 400px;
+        .homeChartContainer{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.transContainer{
+    max-width:450px ;
+    padding: 40px;
+    margin-top: 30px;
+    background-color: var(--componentBackGroundColor);
+    border-radius: 20px;
+    .card{
+        width: 100%;
+        background: linear-gradient(45deg, royalblue,rgb(90, 205, 203),rgb(148, 90, 205));
+        margin-bottom: 30px;
+        padding: 20px;
+        border-radius: 15px;
+        color: white;
+        box-shadow: 0px 0px 20px rgba(90, 205, 203, 0.436);
+    }
+}
+
+.swapContainer{
+    max-width: 550px;
+    background-color: var(--componentBackGroundColor);
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: 30px;
+}
+
+.fundWalletContainer{
+    width: 550px;
+    background-color: var(--componentBackGroundColor);
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: 30px;
+}
+
+@media screen and (max-width: 1250px){
+    .walletContainer{
+        .walletContent{
+            .coinContainer{
+                grid-template-columns: repeat(3,1fr);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px){
+    .walletContainer{
+        .walletContent{
+            .card{
+                width: 100%;
+            }
+            .coinContainer{
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+    }
+    .fundWalletContainer{
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 530px){
+    .fundWalletContainer{
+        width: 100%;
+        padding: 20px;
+    }
+    .walletContainer{
+        .walletContent{
+            .card{
+                width: 100%;
+            }
+            .coinContainer{
+                grid-template-columns: repeat(1,1fr);
+            }
+        }
+    }
+    .transContainer,.swapContainer{
+        padding: 20px;
+    }
+    .coinContainer{
+        .card{
+            width: 100%;
+        }
+    }
+
+}

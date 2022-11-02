@@ -1,0 +1,39 @@
+.settingsContainer{
+    background-color: var(--componentBackGroundColor);
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 15px;
+    .tabContent{
+        padding: 30px 0px;
+    }
+    .profileImg{
+        @include flexDisplay(flex-start, center, row); 
+        border-bottom: 1px solid var(--lightBorderColor);
+        padding-bottom: 20px;
+        img{
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: gray;
+        }
+        .text{
+            width: 200px;
+            margin-left: 20px;
+            p{
+                font-size: 14px;
+                margin: 5px 0;
+            }
+
+        }
+    }
+    .userInfo{
+        padding: 20px 0;
+    }
+    .securityContent{
+        border-bottom: 1px solid var(--lightBorderColor);
+        padding: 20px 0;
+        p{
+            margin: 10px 0;
+        }
+    }
+}

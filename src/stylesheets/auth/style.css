@@ -1,0 +1,177 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background-color: black !important;
+  color: white;
+}
+
+.authFormContainer {
+  max-width: 550px;
+  min-width: 0;
+  min-height: 100vh;
+  padding: 50px 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+.authFormContainer.signUpForm .mantine-PasswordInput-wrapper {
+  margin-bottom: 20px;
+}
+.authFormContainer form {
+  width: 100%;
+}
+.authFormContainer form h2 {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.authFormContainer form .mantine-TextInput-label,
+.authFormContainer form .mantine-NumberInput-label,
+.authFormContainer form .mantine-PasswordInput-label {
+  font-weight: 600;
+  font-size: 16px;
+}
+.authFormContainer form .mantine-TextInput-wrapper {
+  margin-bottom: 20px;
+  width: 100%;
+}
+.authFormContainer form .mantine-TextInput-wrapper .mantine-TextInput-input {
+  padding: 0px 20px;
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.authFormContainer form .mantine-TextInput-wrapper .mantine-TextInput-input:focus {
+  outline: 3px solid rgb(70, 79, 202);
+}
+.authFormContainer form .mantine-NumberInput-wrapper {
+  margin-bottom: 20px;
+  width: 100%;
+}
+.authFormContainer form .mantine-NumberInput-wrapper .mantine-NumberInput-input {
+  padding: 0px 20px;
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.authFormContainer form .mantine-NumberInput-wrapper .mantine-NumberInput-input:focus {
+  outline: 3px solid rgb(70, 79, 202);
+}
+.authFormContainer form .btn {
+  margin-top: 30px;
+}
+.authFormContainer form .mantine-PasswordInput-wrapper {
+  margin-bottom: 5px;
+}
+.authFormContainer form .mantine-PasswordInput-wrapper .mantine-PasswordInput-input {
+  padding: 0px 20px;
+  margin-top: 5px;
+}
+.authFormContainer form .mantine-PasswordInput-wrapper .mantine-PasswordInput-input .mantine-PasswordInput-innerInput {
+  font-size: 16px;
+  font-weight: 500;
+}
+.authFormContainer form .forgotPasswordLink {
+  font-weight: 600;
+  color: rgb(70, 79, 202);
+  padding-bottom: 20px;
+}
+.authFormContainer .formOr {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid gray;
+  padding-top: 30px;
+}
+.authFormContainer .formOr button {
+  margin: 20px;
+}
+.authFormContainer .formOr a {
+  font-weight: 600;
+  color: rgb(70, 79, 202);
+}
+
+.formLogoContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.formLogoContainer h1 {
+  margin-bottom: 30px;
+  color: white;
+}
+.formLogoContainer img {
+  width: 70px;
+}
+
+.verificationContainer {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.verificationContainer .container {
+  width: 380px;
+  height: 380px;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(21, 21, 25);
+  border-radius: 20px;
+  text-align: center;
+}
+.verificationContainer .container p {
+  margin: 5px;
+}
+.verificationContainer .container .loaderContainer {
+  margin-top: 30px;
+}
+
+.confirmationContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 50px 0px;
+}
+.confirmationContainer a,
+.confirmationContainer span {
+  color: rgb(70, 158, 202);
+}
+.confirmationContainer .emailNarration {
+  text-align: center;
+}
+.confirmationContainer .emailNarration img {
+  width: 120px;
+}
+.confirmationContainer .emailNarration h1 {
+  color: white;
+}
+.confirmationContainer .emailNarration p {
+  font-weight: 600;
+}
+
+.notificationContainer {
+  z-index: 20;
+  width: 350px;
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+}/*# sourceMappingURL=style.css.map */

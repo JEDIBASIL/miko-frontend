@@ -1,0 +1,514 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Righteous&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Righteous", cursive;
+  text-decoration: none;
+  color: inherit;
+}
+
+:root {
+  --backGroundColor: rgb(246, 246, 246);
+  --componentBackGroundColor: white;
+  --lighterBorderColor: whitesmoke;
+  --textColor: rgb(53, 53, 53);
+  --hoverEffect1: ghostwhite;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.userApp {
+  width: 100%;
+  background-color: var(--backGroundColor);
+  min-height: 100vh;
+  color: var(--textColor);
+}
+.userApp .swiper-button-next:after,
+.userApp .swiper-button-prev:after {
+  font-size: 18px;
+  font-weight: 900;
+  min-width: 40px;
+  max-width: 40px;
+  min-height: 40px;
+  max-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: var(--backGroundColor);
+  border: 1px solid var(--lighterBorderColor);
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.354);
+}
+
+.topBar {
+  width: 100%;
+  height: 60px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  background-color: var(--componentBackGroundColor);
+  border-bottom: 1px solid var(--lighterBorderColor);
+  padding: 0px 30px;
+  color: var(--textColor);
+}
+.topBar .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+}
+.topBar .logo img {
+  width: 45px;
+}
+.topBar .nameAndNotification {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.topBar .nameAndNotification svg {
+  margin-right: 20px;
+  font-size: 25px;
+}
+
+.userAppContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+}
+
+.sideBar {
+  min-width: 230px;
+  max-width: 230px;
+  height: calc(100vh - 60px);
+  background-color: var(--componentBackGroundColor);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 60px;
+  z-index: 10;
+  border-right: 1px solid var(--lighterBorderColor);
+}
+.sideBar menu {
+  padding: 20px 0px;
+}
+.sideBar menu ul li {
+  padding: 0px 20px;
+  color: var(--textColor);
+}
+.sideBar menu ul li a {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  padding: 13px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.sideBar menu ul li a svg {
+  font-size: 23px;
+  margin-right: 15px;
+}
+.sideBar menu ul li a:hover {
+  background-color: var(--hoverEffect1);
+}
+.sideBar menu ul li a.base {
+  background: none !important;
+  color: var(--textColor) !important;
+}
+.sideBar menu ul li a.active {
+  color: white;
+  background: linear-gradient(45deg, royalblue, slateblue, slateblue);
+}
+
+.pageHeading {
+  font-weight: 700;
+}
+
+.userAppContent {
+  width: calc(100% - 220px);
+  padding: 20px 40px;
+}
+.userAppContent p {
+  font-family: "Lexend", sans-serif !important;
+}
+
+.userHomeContent {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column-reverse;
+  gap: 30px;
+  padding: 40px 0px;
+}
+
+.marketStats {
+  position: relative;
+  background-color: var(--componentBackGroundColor);
+  width: 100%;
+  min-height: 600px;
+  border-radius: 20px;
+  padding: 20px;
+}
+.marketStats .loaderContainer {
+  border-radius: inherit;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  z-index: 5;
+  background-color: var(--componentBackGroundColor);
+}
+.marketStats .coinsContainer .mantine-Chip-root {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+.marketStats .coinsContainer .mantine-Chip-iconWrapper {
+  display: none;
+}
+.marketStats .coinsContainer .mantine-Chip-label {
+  border: none;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding: 10px 20px;
+  border-radius: 10px;
+  max-width: 90px;
+}
+.marketStats .coinsContainer .mantine-Chip-label h4 {
+  width: 100%;
+  word-break: break-all;
+  text-align: center;
+  margin-top: 3px;
+}
+.marketStats .coinsContainer .mantine-Chip-label img {
+  width: 50px;
+}
+.marketStats .durationContainer {
+  margin: 40px;
+}
+.marketStats .convertedCoinPrize {
+  text-align: center;
+  margin-top: 30px;
+  font-weight: 600;
+}
+.marketStats .homeChartContainer {
+  width: 100%;
+  height: 300px;
+  margin-top: 50px;
+}
+.marketStats .homeChartContainer svg g tspan {
+  position: absolute !important;
+  transform: translateX(20px) !important;
+}
+
+.quickAction {
+  width: 100%;
+  background-color: var(--componentBackGroundColor);
+  border-radius: 20px;
+  padding: 30px 20px;
+}
+.quickAction .quickActionContainer {
+  width: 100%;
+  gap: 20px;
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.quickAction .quickActionContainer .card {
+  text-align: left;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  border: 1px solid var(--lighterBorderColor);
+  margin-bottom: 15px;
+  padding: 15px 20px;
+  border-radius: 15px;
+}
+.quickAction .quickActionContainer .card:hover svg {
+  transform: translateY(-3px);
+  padding: 12px;
+}
+.quickAction .quickActionContainer .card svg {
+  font-size: 62px;
+  color: white;
+  background: linear-gradient(45deg, royalblue, slateblue, skyblue);
+  border-radius: 20px;
+  padding: 15px;
+  margin-right: 10px;
+  transition: ease-in 0.2s;
+}
+
+.CryptoCard {
+  width: 100%;
+  padding-bottom: 30px !important;
+  z-index: 1;
+}
+.CryptoCard .slideContainer .card {
+  background-color: var(--componentBackGroundColor);
+  height: 180px;
+  width: 100%;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.CryptoCard .slideContainer .card img {
+  width: 70px;
+}
+.CryptoCard .slideContainer .card .currency {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+.CryptoCard .slideContainer .card .currencyName {
+  width: 100%;
+  text-align: right;
+  padding-right: 15px;
+  margin-top: 10px;
+  font-weight: 600;
+}
+.CryptoCard .slideContainer:nth-child(1) .card {
+  color: white;
+}
+.CryptoCard .slideContainer:nth-child(1) .card:nth-child(1) {
+  background: linear-gradient(45deg, royalblue, slateblue, rgb(90, 205, 190));
+  background-size: cover;
+}
+
+.userHomeContainer {
+  margin-top: 30px;
+}
+
+.walletContainer {
+  margin-top: 30px;
+}
+.walletContainer .walletContent .card {
+  background: linear-gradient(45deg, royalblue, rgb(90, 205, 203), rgb(148, 90, 205));
+  margin-bottom: 30px;
+  padding: 20px;
+  width: calc(50% - 20px);
+  border-radius: 15px;
+  color: white;
+  box-shadow: 0px 0px 20px rgba(90, 205, 203, 0.436);
+}
+.walletContainer .walletContent .coinContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.walletContainer .walletContent .coinContainer .coinCard {
+  background-color: var(--componentBackGroundColor);
+  padding: 20px;
+  border-radius: 15px;
+}
+.walletContainer .walletContent .coinContainer .coinCard img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+.walletContainer .walletContent .coinContainer .coinCard .ammount {
+  font-weight: 500;
+  text-align: right;
+  margin-top: 10px;
+}
+
+.coinContainer {
+  margin-top: 30px;
+}
+.coinContainer .card {
+  background-color: var(--componentBackGroundColor);
+  width: 50%;
+  padding: 30px;
+  border-radius: 15px;
+  display: flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.coinContainer .card img {
+  width: 100px;
+}
+.coinContainer .card h3 {
+  margin-top: 10px;
+}
+.coinContainer .coinChart {
+  background-color: var(--componentBackGroundColor);
+  width: 100%;
+  padding: 30px;
+  border-radius: 15px;
+  margin-top: 30px;
+  height: 400px;
+}
+.coinContainer .coinChart .homeChartContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.transContainer {
+  max-width: 450px;
+  padding: 40px;
+  margin-top: 30px;
+  background-color: var(--componentBackGroundColor);
+  border-radius: 20px;
+}
+.transContainer .card {
+  width: 100%;
+  background: linear-gradient(45deg, royalblue, rgb(90, 205, 203), rgb(148, 90, 205));
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 15px;
+  color: white;
+  box-shadow: 0px 0px 20px rgba(90, 205, 203, 0.436);
+}
+
+.swapContainer {
+  max-width: 550px;
+  background-color: var(--componentBackGroundColor);
+  padding: 30px;
+  border-radius: 20px;
+  margin-top: 30px;
+}
+
+.fundWalletContainer {
+  width: 550px;
+  background-color: var(--componentBackGroundColor);
+  padding: 30px;
+  border-radius: 20px;
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 1250px) {
+  .walletContainer .walletContent .coinContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 800px) {
+  .walletContainer .walletContent .card {
+    width: 100%;
+  }
+  .walletContainer .walletContent .coinContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .fundWalletContainer {
+    width: 85%;
+  }
+}
+@media screen and (max-width: 530px) {
+  .fundWalletContainer {
+    width: 100%;
+    padding: 20px;
+  }
+  .walletContainer .walletContent .card {
+    width: 100%;
+  }
+  .walletContainer .walletContent .coinContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .transContainer, .swapContainer {
+    padding: 20px;
+  }
+  .coinContainer .card {
+    width: 100%;
+  }
+}
+.settingsContainer {
+  background-color: var(--componentBackGroundColor);
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 15px;
+}
+.settingsContainer .tabContent {
+  padding: 30px 0px;
+}
+.settingsContainer .profileImg {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  border-bottom: 1px solid var(--lightBorderColor);
+  padding-bottom: 20px;
+}
+.settingsContainer .profileImg img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: gray;
+}
+.settingsContainer .profileImg .text {
+  width: 200px;
+  margin-left: 20px;
+}
+.settingsContainer .profileImg .text p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+.settingsContainer .userInfo {
+  padding: 20px 0;
+}
+.settingsContainer .securityContent {
+  border-bottom: 1px solid var(--lightBorderColor);
+  padding: 20px 0;
+}
+.settingsContainer .securityContent p {
+  margin: 10px 0;
+}
+
+@media screen and (max-width: 999px) {
+  .sideBar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    transform: translateX(-100%);
+  }
+  .userAppContent {
+    width: 100%;
+    padding: 20px 20px;
+  }
+}
+@media screen and (max-width: 899px) {
+  .quickAction .quickActionContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .quickAction .quickActionContainer .card svg {
+    font-size: 55px;
+    border-radius: 15px;
+  }
+  .quickAction .quickActionContainer .card h4 {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 530px) {
+  .pageHeading {
+    font-size: 25px;
+  }
+  .quickAction .quickActionContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}/*# sourceMappingURL=style.css.map */
