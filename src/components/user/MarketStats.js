@@ -32,7 +32,7 @@ const MarketStats = () => {
         console.log(err);
         setStatus("pending");
       });
-  },[config,id,coinMarketData,status]);
+  },[config,coinMarketData,status]);
 
   const config = {
     headers: {
