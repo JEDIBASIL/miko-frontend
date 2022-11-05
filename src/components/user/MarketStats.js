@@ -20,13 +20,15 @@ const MarketStats = () => {
   const [status, setStatus] = useState("pending");
 
   const [coinMarketData, setCoinMarketData] = useState(null);
-  
-  const config = {
-    headers: {
-      accept: "application/json",
-    },
-  };
+
+
   const getCoin = useCallback(() => {
+    const config = {
+      headers: {
+        accept: "application/json",
+      },
+    };
+
     axios
       .get(`https://api.coingecko.com/api/v3/coins/${coinDetails.id}`, config)
       .then((res) => {
@@ -37,7 +39,7 @@ const MarketStats = () => {
         console.log(err);
         setStatus("pending");
       });
-  },[config,coinDetails.id,coinMarketData,status]);
+  },[coinDetails.id]);
 
 
 

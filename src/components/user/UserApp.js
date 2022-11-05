@@ -10,20 +10,21 @@ const UserApp = () => {
   const [userInfo, setUserInfo] = useState({})
 
 
-  const config = {
-    headers: {
-      "Authorization": `Bearer ${getAuthToken("WsAQ")}`
-    }
-  }
+  
 
   const getInfo = useCallback(() => {
+    const config = {
+      headers: {
+        "Authorization": `Bearer ${getAuthToken("WsAQ")}`
+      }
+    }
     axios.get("http://127.0.0.1:8080/api/v1/user/info", config)
       .then(res => {
         setUserInfo(res.data.data)
       }).catch(err => {
         console.log(err)
       })
-  },[config,userInfo]);
+  });
 
   useEffect(() => {
     getInfo();

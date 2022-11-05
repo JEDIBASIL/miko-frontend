@@ -4,13 +4,14 @@ import { Link } from "react-router-dom";
 const Wallet = () => {
   const [coins, setCoins] = useState([])
 
-  const config = {
-    headers: {
-      accept: "application/json",
-    },
-  };
+
 
   const getCoins = useCallback(() => {
+    const config = {
+      headers: {
+        accept: "application/json",
+      },
+    };
     axios
       .get(
         `https://api.coingecko.com/api/v3/coins/markets?vs_currency=ngn&order=market_cap_desc&per_page=20&page=1&sparkline=false`,
@@ -22,7 +23,7 @@ const Wallet = () => {
       .catch((err) => {
         console.log(err);
       });
-  },[config])
+  },[])
 
   useEffect(() => {
     getCoins();
