@@ -8,7 +8,7 @@ import { IoCheckmarkSharp, IoAlertOutline, IoCloudOfflineSharp } from "react-ico
 import { z } from "zod"
 import axios from "axios"
 import { isAuth, setAuthToken } from "../../utils/userAuth"
-import { Navigate } from "react-router"
+import { Navigate, Link as A } from "react-router-dom"
 const SignIn = () => {
 
     const [status, setStatus] = useState("")
@@ -72,13 +72,13 @@ const SignIn = () => {
                     <div className="notificationContainer">
                         <Notification
                             icon={
-                                status === "loading" && (<Loader color={"major.0"} size={"md"} variant="oval" />) ||
-                                status === "error" && (<IoCloudOfflineSharp size={"22"} />) ||
-                                status === "failed" && (<IoAlertOutline size={"22"} />) ||
-                                status === "success" && (<IoCheckmarkSharp size={"22"} />)
+                                (status === "loading" && (<Loader color={"major.0"} size={"md"} variant="oval" />)) ||
+                                (status === "error" && (<IoCloudOfflineSharp size={"22"} />)) ||
+                                (status === "failed" && (<IoAlertOutline size={"22"} />)) ||
+                                (status === "success" && (<IoCheckmarkSharp size={"22"} />))
                             }
                             color={
-                                (status === "error" || status === "failed") && "red" ||
+                                ((status === "error" || status === "failed") && "red") ||
                                 status === "success" && "teal"
                             }
                             title={<h3>{status.charAt(0).toUpperCase() + status.slice(1)}</h3>}
@@ -104,10 +104,10 @@ const SignIn = () => {
                 }
                 <div className="authFormContainer">
                     <form onSubmit={form.onSubmit(values => submit(values))}>
-                        <a className="formLogoContainer">
+                        <A to={"/"} className="formLogoContainer">
                             <img src={logoImg} alt="" />
                             <h1>Miko</h1>
-                        </a>
+                        </A>
                         <h2>Sign in</h2>
                         <TextInput
                             label={"Username"}
@@ -142,7 +142,7 @@ const SignIn = () => {
                         <div className="formOr">
                             <h3>OR</h3>
                             <Button size="lg" color={"gray"} variant="outline"><FcGoogle size={"25px"} /> Sign in with google</Button>
-                            <p>Don't have an account? <a href="">Sign up</a></p>
+                            <p>Don't have an account? <A to={"/auth/sign-up"}>Sign up</A></p>
                         </div>
                     </form>
                 </div>

@@ -7,22 +7,22 @@ import axios from "axios";
 
 const Confirm = () => {
   const [info, setInfo] = useState("")
-  const [status,setStatus] = useState("")
-  const [modal,setModal] = useState("")
-  useEffect(() =>{
+  const [status, setStatus] = useState("")
+  const [modal, setModal] = useState("")
+  useEffect(() => {
     const getDetails = getInfo();
-    if(getInfo) setInfo(getDetails)
-  },[])
+    if (getInfo) setInfo(getDetails)
+  }, [])
 
-  const resendToken= () =>{
-    axios.post("http://127.0.0.1:8080/api/v1/user/generate",{email:info.email})
-    .then(res =>{
-      console.log(res.data)
-      setStatus(res.data.status)
-    }).catch(err =>{
-      console.log(err)
-      setStatus(err)
-    })
+  const resendToken = () => {
+    axios.post("http://127.0.0.1:8080/api/v1/user/generate", { email: info.email })
+      .then(res => {
+        console.log(res.data)
+        setStatus(res.data.status)
+      }).catch(err => {
+        console.log(err)
+        setStatus(err)
+      })
   }
   return (
     <MantineProvider
@@ -36,29 +36,29 @@ const Confirm = () => {
       withGlobalStyles
       withNormalizeCSS
     >
-      <Modal 
+      <Modal
         opened={modal}
-        
-        onClose={()=>{
-          status !== "" ? setModal(false) :setModal(true)
+
+        onClose={() => {
+          status !== "" ? setModal(false) : setModal(true)
         }}
         title={
           <h2>
             {
-              status==="failed" && "Failed" ||
-              status==="success" && "Sucess" ||
-              status==="" &&  "Please wait.."
+              (status === "failed" && "Failed") ||
+              (status === "success" && "Success") ||
+              (status === "" && "Please wait..")
             }
           </h2>
         }
       >
-      <Center>{ !status && <Loader color={"major.0"}  size={"xl"} variant="dots"/>}</Center>
-      <p style={{fontWeight:"500"}}>
-        {
-          (status==="error" || status==="failed") && "An error occured" ||
-          status==="success" && "Verification sent"
-        }
-      </p>
+        <Center>{!status && <Loader color={"major.0"} size={"xl"} variant="dots" />}</Center>
+        <p style={{ fontWeight: "500" }}>
+          {
+            ((status === "error" || status === "failed") && "An error occurred") ||
+            (status === "success" && "Verification sent")
+          }
+        </p>
       </Modal>
       <div className="confirmationContainer">
         <div className="emailNarration">
@@ -74,8 +74,8 @@ const Confirm = () => {
         </div>
 
         <div>
-          Didn’t get an email? Kindly click 
-          <span style={{cursor:"pointer"}} onClick={() =>{
+          Didn’t get an email? Kindly click
+          <span style={{ cursor: "pointer" }} onClick={() => {
             setStatus("")
             setModal(true)
             resendToken();

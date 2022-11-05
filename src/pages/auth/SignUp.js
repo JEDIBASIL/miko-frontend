@@ -102,7 +102,7 @@ const SignUp = () => {
             
             } 
             color={
-              (status === "error" || status === "failed") &&  "red"||
+              ((status === "error" || status === "failed") &&  "red") ||
               status === "success" &&  "teal"
             }
             title={<h3>{status.charAt(0).toUpperCase()+status.slice(1)}</h3>}
@@ -181,7 +181,7 @@ const SignUp = () => {
                 <FcGoogle size={"25px"} /> Sign up with google
               </Button>
               <p>
-                Don't have an account? <a href="">Sign in</a>
+                Don't have an account? <A to={"/auth/sign-in"}>Sign in</A>
               </p>
             </div>
           </form>
