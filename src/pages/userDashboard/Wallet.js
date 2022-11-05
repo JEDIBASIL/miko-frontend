@@ -26,8 +26,7 @@ const Wallet = () => {
 
   useEffect(() =>{
     getCoins();
-    console.log(coins)
-  },[])
+  },[coins,getCoins])
 
   return (
     <div>

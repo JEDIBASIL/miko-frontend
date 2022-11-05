@@ -21,21 +21,6 @@ const MarketStats = () => {
 
   const [coinMarketData, setCoinMarketData] = useState(null);
 
-  useEffect(() => {
-    axios
-      .get(
-        `https://api.coingecko.com/api/v3/coins/markets?vs_currency=ngn&order=market_cap_desc&per_page=20&page=1&sparkline=false`,
-        config
-      )
-      .then((res) => {
-        setCryptos(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    getCoin();
-  }, [cryptos]);
-
   const getCoin = () => {
     axios
       .get(`https://api.coingecko.com/api/v3/coins/${coinDetails.id}`, config)
@@ -54,6 +39,25 @@ const MarketStats = () => {
       accept: "application/json",
     },
   };
+
+
+  useEffect(() => {
+    axios
+      .get(
+        `https://api.coingecko.com/api/v3/coins/markets?vs_currency=ngn&order=market_cap_desc&per_page=20&page=1&sparkline=false`,
+        config
+      )
+      .then((res) => {
+        setCryptos(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    getCoin();
+  }, [cryptos, getCoin, config]);
+
+
+
 
   return (
     <div className="marketStats">
@@ -116,8 +120,7 @@ const MarketStats = () => {
       {status !== "pending" ? (
         <p className="convertedCoinPrize">
           {coinDetails.name.toUpperCase() +
-            ` = ${coinMarketData.ngn + ""} NGN, ${coinMarketData.usd} USD, ${
-              coinMarketData.eur
+            ` = ${coinMarketData.ngn + ""} NGN, ${coinMarketData.usd} USD, ${coinMarketData.eur
             } EURO`}
         </p>
       ) : (
@@ -128,13 +131,13 @@ const MarketStats = () => {
       <div className="durationContainer">
         <Chip.Group position="center">
           <Chip radius={5} value={"month"}>
-            Past month  
+            Past month
           </Chip>
           <Chip radius={5} value={"week"}>
-            Past week 
+            Past week
           </Chip>
           <Chip radius={5} value={"day"}>
-            Past hour 
+            Past hour
           </Chip>
         </Chip.Group>
       </div>

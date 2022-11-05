@@ -9,7 +9,6 @@ const Confirm = () => {
   const [info, setInfo] = useState("")
   const [status,setStatus] = useState("")
   const [modal,setModal] = useState("")
-  const [message,setMessage] = useState("")
   useEffect(() =>{
     const getDetails = getInfo();
     if(getInfo) setInfo(getDetails)
@@ -20,7 +19,6 @@ const Confirm = () => {
     .then(res =>{
       console.log(res.data)
       setStatus(res.data.status)
-      setMessage(res.data.message)
     }).catch(err =>{
       console.log(err)
       setStatus(err)
@@ -69,7 +67,7 @@ const Confirm = () => {
           <div>
             <h1>We are almost done</h1>
             <p>
-              We sent a verification link to <a href="">{info.email}</a>
+              We sent a verification link to <span>{info.email}</span>
             </p>
             <p>click on the link to verify your mail</p>
           </div>

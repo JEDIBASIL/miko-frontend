@@ -8,9 +8,7 @@ import axios from "axios"
 import { getAuthToken } from "../../utils/userAuth"
 const UserApp = () => {
   const [userInfo, setUserInfo] = useState({})
-  useEffect(() => {
-    getInfo();
-  }, [0])
+
 
   const config = {
     headers: {
@@ -29,11 +27,15 @@ const UserApp = () => {
       })
   }
 
+  useEffect(() => {
+    getInfo();
+  }, [getInfo])
+
   return (
     <MantineProvider
       theme={
         {
-          colorScheme: "light",
+          colorScheme: "dark",
           colors: {
             major: ["#464fca","#464fca","#464fca"]
           },

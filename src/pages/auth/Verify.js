@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import logoImg from "../../images/logo.png";
 import { Loader, MantineProvider, Notification } from "@mantine/core";
 import { useEffect, useState } from "react";
-import { Navigate } from "react-router";
+import { Navigate, Link as A } from "react-router-dom";
 import {
   IoCheckmarkSharp,
   IoAlertOutline,
@@ -17,9 +17,10 @@ const Verify = () => {
   const token = params.token;
   const [status, setStatus] = useState("");
   const [message, setMessage] = useState("");
+
   useEffect(() => {
     verify()
-  }, [0]);
+  }, [verify]);
 
   const verify = () => {
     axios.post("http://127.0.0.1:8080/api/v1/user/verify", { token })
@@ -79,10 +80,10 @@ const Verify = () => {
         </div>
         <div className="verificationContainer">
           <div className="container">
-            <a className="formLogoContainer">
+            <A to={"/"} className="formLogoContainer">
               <img src={logoImg} alt="" />
               <h1>Miko</h1>
-            </a>
+            </A>
             <h3>Please wait..</h3>
             <p>Verification in progress</p>
             <div className="loaderContainer">
