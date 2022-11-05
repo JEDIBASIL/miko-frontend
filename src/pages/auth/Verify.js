@@ -2,7 +2,7 @@ import "../../stylesheets/auth/style.css";
 import { useParams } from "react-router";
 import logoImg from "../../images/logo.png";
 import { Loader, MantineProvider, Notification } from "@mantine/core";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Navigate, Link as A } from "react-router-dom";
 import {
   IoCheckmarkSharp,
@@ -19,17 +19,16 @@ const Verify = () => {
   const [message, setMessage] = useState("");
 
 
-  const verify = () => {
+  const verify = useCallback(() => {
     axios.post("http://127.0.0.1:8080/api/v1/user/verify", { token })
       .then(res => {
-        console.log(res.data)
         setStatus(res.data.status);
         res.data.message && setMessage(res.data.message);
       }).catch(err => {
         console.log(err)
         setStatus("error")
       })
-  }
+  },[token,status,message])
   useEffect(() => {
     verify()
   }, [verify]);

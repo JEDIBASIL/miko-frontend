@@ -1,5 +1,5 @@
 import { Chip, Loader } from "@mantine/core";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -21,7 +21,7 @@ const MarketStats = () => {
 
   const [coinMarketData, setCoinMarketData] = useState(null);
 
-  const getCoin = () => {
+  const getCoin = useCallback(() => {
     axios
       .get(`https://api.coingecko.com/api/v3/coins/${coinDetails.id}`, config)
       .then((res) => {
@@ -32,7 +32,7 @@ const MarketStats = () => {
         console.log(err);
         setStatus("pending");
       });
-  };
+  },[config,id,coinMarketData,status]);
 
   const config = {
     headers: {

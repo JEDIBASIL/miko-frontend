@@ -3,7 +3,7 @@ import TopBar from "./TopBar"
 import "../../stylesheets/user/style.css"
 import SideBar from "./SideBar"
 import { MantineProvider } from "@mantine/core"
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import axios from "axios"
 import { getAuthToken } from "../../utils/userAuth"
 const UserApp = () => {
@@ -16,16 +16,14 @@ const UserApp = () => {
     }
   }
 
-  const getInfo = () => {
-    console.log(config.headers.Authorization)
+  const getInfo = useCallback(() => {
     axios.get("http://127.0.0.1:8080/api/v1/user/info", config)
       .then(res => {
-        console.log(res)
         setUserInfo(res.data.data)
       }).catch(err => {
         console.log(err)
       })
-  }
+  },[config,userInfo]);
 
   useEffect(() => {
     getInfo();
@@ -37,7 +35,7 @@ const UserApp = () => {
         {
           colorScheme: "light",
           colors: {
-            major: ["#464fca","#464fca","#464fca"]
+            major: ["#464fca", "#464fca", "#464fca"]
           },
           primaryColor: "major",
         }}
