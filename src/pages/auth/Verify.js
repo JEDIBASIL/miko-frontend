@@ -18,9 +18,6 @@ const Verify = () => {
   const [status, setStatus] = useState("");
   const [message, setMessage] = useState("");
 
-  useEffect(() => {
-    verify()
-  }, [verify]);
 
   const verify = () => {
     axios.post("http://127.0.0.1:8080/api/v1/user/verify", { token })
@@ -33,10 +30,13 @@ const Verify = () => {
         setStatus("error")
       })
   }
+  useEffect(() => {
+    verify()
+  }, [verify]);
 
   return (
     <>
-    {status === "success" && <Navigate to="/auth/sign-in" />}
+      {status === "success" && <Navigate to="/auth/sign-in" />}
       <MantineProvider
         theme={{
           colorScheme: "dark",

@@ -15,7 +15,7 @@ import { zodResolver, useForm } from "@mantine/form";
 import { z } from "zod";
 import { useState } from "react";
 import {IoCheckmarkSharp,IoAlertOutline,IoCloudOfflineSharp} from "react-icons/io5"
-import { Navigate } from "react-router";
+import { Navigate, Link as A } from "react-router-dom";
 import { setInfo, isAuth } from "../../utils/userAuth";
 
 
@@ -95,10 +95,10 @@ const SignUp = () => {
         <div className="notificationContainer">
             <Notification 
             icon={
-            status === "loading" && ( <Loader color={"major.0"}  size={"md"} variant="oval"/> )||
-            status === "error" &&  (<IoCloudOfflineSharp size={"22"} />) ||
-            status === "failed" &&  (<IoAlertOutline size={"22"} />) ||
-            status === "success" &&  (<IoCheckmarkSharp size={"22"} />) 
+            (status === "loading" && ( <Loader color={"major.0"}  size={"md"} variant="oval"/> ))||
+            (status === "error" &&  (<IoCloudOfflineSharp size={"22"} />)) ||
+            (status === "failed" &&  (<IoAlertOutline size={"22"} />)) ||
+            (status === "success" &&  (<IoCheckmarkSharp size={"22"} />)) 
             
             } 
             color={
@@ -113,10 +113,10 @@ const SignUp = () => {
         }
         <div className="authFormContainer signUpForm">
           <form onSubmit={form.onSubmit((values) => submit(values))}>
-            <a className="formLogoContainer">
+            <A to={"/"} className="formLogoContainer">
               <img src={logoImg} alt="" />
               <h1>Miko</h1>
-            </a>
+            </A>
             <h2>Sign up</h2>
 
             <Grid>

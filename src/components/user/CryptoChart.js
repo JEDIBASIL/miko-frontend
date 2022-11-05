@@ -80,7 +80,7 @@ const CryptoChart = ({id}) => {
 
       useEffect(() =>{
         getChart();
-      },[id])
+      },[id,getChart])
     return (
 
         <div className='homeChartContainer'>
