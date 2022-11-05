@@ -75,7 +75,7 @@ const CryptoChart = ({ id }) => {
       .catch((err) => {
         console.log(err);
       });
-  })
+  }, [coinData])
 
   useEffect(() => {
     getChart();
