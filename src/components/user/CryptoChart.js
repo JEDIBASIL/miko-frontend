@@ -1,4 +1,4 @@
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import axios from "axios"
 import { useEffect, useState } from 'react';
 import dateConverter from "../../utils/dateConverter";                                                                                                                                                                                                           

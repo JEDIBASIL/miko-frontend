@@ -1,5 +1,4 @@
 import { Select, TextInput, Button } from '@mantine/core'
-import React from 'react'
 
 const FundWallet = () => {
     const data = []

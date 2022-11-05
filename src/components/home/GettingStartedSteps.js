@@ -1,4 +1,4 @@
-import { Stepper, Button, Group } from '@mantine/core';
+import { Stepper } from '@mantine/core';
 import iPhone from "../../images/iPhone.png"
 import { useState } from 'react';
 import rocketImg from "../../images/btcRocket.png"

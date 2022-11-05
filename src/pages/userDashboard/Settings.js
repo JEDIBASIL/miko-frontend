@@ -1,5 +1,4 @@
 import { Button, SimpleGrid, Switch, Tabs, TextInput } from '@mantine/core'
-import React from 'react'
 import userProfileImg from "../../images/user.png"
 
 const Settings = () => {

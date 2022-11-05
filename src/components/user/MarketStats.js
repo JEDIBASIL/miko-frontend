@@ -66,26 +66,26 @@ const MarketStats = () => {
       <div className="coinsContainer">
         <Chip.Group defaultValue={"bitcoin"} position="center">
           <Swiper
-            slidesPerView={3.3}
-            breakpoints={{
-              600:{
-                width:530,
-                slidesPerView: 3.8,
-              },
-              730:{
-                width:530,
-                slidesPerView: 4.8,
-              },
-              800:{
-                width:530,
-                slidesPerView: 6.3,
-              },
-              900:{
-                width:530,
-                slidesPerView: 14,
-              }
-            }}
-            spaceBetween={20}
+            slidesPerView={10}
+            // breakpoints={{
+            //   600:{
+            //     width:530,
+            //     slidesPerView: 3.8,
+            //   },
+            //   730:{
+            //     width:530,
+            //     slidesPerView: 4.8,
+            //   },
+            //   800:{
+            //     width:530,
+            //     slidesPerView: 6.3,
+            //   },
+            //   900:{
+            //     width:530,
+            //     slidesPerView: 14,
+            //   }
+            // }}
+            spaceBetween={50}
             pagination={{
               dynamicBullets: true,
             }}

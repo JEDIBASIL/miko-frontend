@@ -39,7 +39,7 @@ body {
 
 .userApp {
   width: 100%;
-  background-color: var(--backGroundColor);
+  background-color: var(--backGcroundColor);
   min-height: 100vh;
   color: var(--textColor);
   .swiper-button-next:after,
@@ -88,6 +88,7 @@ body {
 .userAppContainer {
   width: 100%;
   @include flexDisplay(space-between, flex-start, row);
+  background-color: var(--backGroundColor);
 }
 
 .sideBar {
@@ -139,6 +140,7 @@ body {
 .userAppContent {
   width: calc(100% - 220px);
   padding: 20px 40px;
+  background-color: var(--backGcroundColor);
   p {
     font-family: "Lexend", sans-serif !important;
   }
@@ -150,8 +152,6 @@ body {
   padding: 40px 0px;
 }
 
-// 92372953-2cf3-4086-853f-75feaa0112bd
-
 .marketStats {
   position: relative;
   background-color: var(--componentBackGroundColor);
@@ -159,7 +159,6 @@ body {
   min-height: 600px;
   border-radius: 20px;
   padding: 20px;
-
   .loaderContainer {
     border-radius: inherit;
     position: absolute;
@@ -173,6 +172,7 @@ body {
   }
   .coinsContainer {
     .mantine-Chip-root {
+      width: 100%;
       height: max-content;
     }
 
@@ -314,46 +314,44 @@ body {
 @import "wallet";
 @import "settings";
 
-
-@media screen and (max-width: 999px){
-    .sideBar{
-        position: fixed;
-        left: 0;
-        top: 0;
-        height: 100vh;
-        transform: translateX(-100%);
-    }
-    .userAppContent{
-        width: 100%;
-        padding: 20px 20px;
-    }
+@media screen and (max-width: 999px) {
+  .sideBar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    transform: translateX(-100%);
+  }
+  .userAppContent {
+    width: 100%;
+    padding: 20px 20px;
+  }
 }
 
-@media screen and (max-width: 899px){
-    
-    .quickAction{
-        .quickActionContainer{
-            grid-template-columns: repeat(2, 1fr);
-            .card{
-                svg{
-                    font-size: 55px;
-                    border-radius: 15px;
-                }
-                h4{
-                    font-size: 15px;
-                }
-            }
+@media screen and (max-width: 899px) {
+  .quickAction {
+    .quickActionContainer {
+      grid-template-columns: repeat(2, 1fr);
+      .card {
+        svg {
+          font-size: 55px;
+          border-radius: 15px;
         }
-    }
-}
-
-@media screen and (max-width: 530px){
-    .pageHeading {
-        font-size: 25px;
+        h4 {
+          font-size: 15px;
+        }
       }
-      .quickAction{
-        .quickActionContainer{
-            grid-template-columns: repeat(1, 1fr);
-        }
     }
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .pageHeading {
+    font-size: 25px;
+  }
+  .quickAction {
+    .quickActionContainer {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
 }

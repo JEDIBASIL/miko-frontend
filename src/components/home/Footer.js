@@ -11,7 +11,12 @@ const Footer = () => {
             </div>
 
             <p>Fastest, Easiest and Cheapest way to buy cryptocurrencies.</p>
-            <div className="socialsContainer"></div>
+            <div className="socialsContainer">
+              <IoLogoFacebook />
+              <IoLogoInstagram />
+              <IoLogoTwitter />
+              <IoLogoDiscord />
+            </div>
         </div>
         <ul>
           <h4>Company</h4>

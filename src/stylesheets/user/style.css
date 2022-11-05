@@ -23,7 +23,7 @@ body {
 
 .userApp {
   width: 100%;
-  background-color: var(--backGroundColor);
+  background-color: var(--backGcroundColor);
   min-height: 100vh;
   color: var(--textColor);
 }
@@ -88,6 +88,7 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   flex-direction: row;
+  background-color: var(--backGroundColor);
 }
 
 .sideBar {
@@ -141,6 +142,7 @@ body {
 .userAppContent {
   width: calc(100% - 220px);
   padding: 20px 40px;
+  background-color: var(--backGcroundColor);
 }
 .userAppContent p {
   font-family: "Lexend", sans-serif !important;
@@ -178,6 +180,7 @@ body {
   background-color: var(--componentBackGroundColor);
 }
 .marketStats .coinsContainer .mantine-Chip-root {
+  width: 100%;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;

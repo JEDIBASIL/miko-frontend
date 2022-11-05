@@ -1,4 +1,3 @@
-import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import bitcoinImage from "../../images/bitcoin.webp"
 import etheriumImage from "../../images/ethereum.webp"

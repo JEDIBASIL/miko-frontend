@@ -1,5 +1,5 @@
 import {NavLink as A, useLocation} from "react-router-dom"
-import {IoHome, IoWallet, IoPerson, IoSettingsSharp, IoSwapHorizontal,IoCash} from "react-icons/io5"
+import {IoHome, IoWallet, IoSettingsSharp, IoSwapHorizontal,IoCash} from "react-icons/io5"
 const SideBar = () => {
   const loaction = useLocation();
   return (

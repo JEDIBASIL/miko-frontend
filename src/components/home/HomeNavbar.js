@@ -1,4 +1,3 @@
-import React from 'react'
 import {Link as A} from "react-router-dom"
 import logoImg from "../../images/logo.png"
 

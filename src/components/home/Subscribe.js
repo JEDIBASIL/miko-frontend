@@ -1,4 +1,3 @@
-
 const Subscribe = () => {
   return (
     <div className="Subscribe">

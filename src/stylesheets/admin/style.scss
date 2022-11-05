@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Righteous&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Righteous", cursive;
+  text-decoration: none;
+  color: inherit;
+}
+
+@mixin flexDisplay($justify, $align, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+.adminApp {
+  width: 100%;
+  @include flexDisplay(space-between, flex-start, row);
+  background-color: var(--componentBackGroundColor);
+  color: var(--textColor);
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 18px;
+    font-weight: 900;
+    min-width: 40px;
+    max-width: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    @include flexDisplay(center, center, row);
+    background-color: var(--backGroundColor);
+    border: 1px solid var(--lighterBorderColor);
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.354);
+  }
+}
+
+.adminTopNav {
+  width: 100%;
+  height: 50px;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  @include flexDisplay(space-between, center, row);
+  background-color: var(--componentBackGroundColor);
+  border-bottom: 1px solid var(--lighterBorderColor);
+  padding: 0px 30px;
+  .logo {
+    @include flexDisplay(center, center, row);
+    gap: 10px;
+    img {
+      width: 45px;
+    }
+  }
+  color: var(--textColor);
+  .nameAndNotification {
+    @include flexDisplay(center, center, row);
+    svg {
+      margin-right: 20px;
+      font-size: 25px;
+    }
+  }
+}
+
+.adminAppContainer {
+  min-height: 100vh;
+  width: 100%;
+  padding: 0px 20px;
+}
+
+.adminSideBar {
+  min-width: 230px;
+  max-width: 230px;
+  height: 100vh;
+//   background: linear-gradient(45deg, royalblue, slateblue, slateblue);
+    background-color: black;
+  position: sticky;
+  top: 0px;
+  z-index: 10;
+  border-right: 1px solid var(--lighterBorderColor);
+  menu {
+    padding: 20px 0px;
+    @include flexDisplay(space-between, flex-start, column);
+    height: 100%;
+    width: 100%;
+    ul {
+    width: 100%;
+      li {
+        padding: 0px 20px;
+        color: whitesmoke;
+        a {
+          @include flexDisplay(flex-start, center, row);
+          padding: 13px 20px;
+          border-radius: 8px;
+          font-size: 16px;
+          margin-bottom: 10px;
+          svg {
+            font-size: 23px;
+            margin-right: 15px;
+          }
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.182);
+          }
+          &.base {
+            background: none !important;
+           color: whitesmoke !important;
+          }
+          &.active {
+            border-left:5px solid white ;
+            background-color: rgba(255, 255, 255, 0.182);
+          }
+        }
+      }
+    }
+  }
+}
+
+.pageHeading {
+  font-weight: 700;
+}

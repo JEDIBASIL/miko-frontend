@@ -1,6 +1,5 @@
 import React from 'react'
 import Ads from '../components/home/Ads'
-import Endorsement from '../components/home/Endorsement'
 import GettingStartedSteps from '../components/home/GettingStartedSteps'
 import Hero from '../components/home/Hero'
 import Service from '../components/home/Service'

@@ -1,7 +1,6 @@
 import CryptoCard from "../../components/user/CryptoCard"
 import MarketStats from "../../components/user/MarketStats"
 import QuickAction from "../../components/user/QuickAction"
-import {redirect} from "react-router-dom"
 
 const UserHome = () => {
 

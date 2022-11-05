@@ -7,7 +7,7 @@ import { useForm, zodResolver } from "@mantine/form"
 import { IoCheckmarkSharp, IoAlertOutline, IoCloudOfflineSharp } from "react-icons/io5"
 import { z } from "zod"
 import axios from "axios"
-import { isAuth, setAuthToken, setInfo } from "../../utils/userAuth"
+import { isAuth, setAuthToken } from "../../utils/userAuth"
 import { Navigate } from "react-router"
 const SignIn = () => {
 

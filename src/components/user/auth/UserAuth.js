@@ -1,9 +1,10 @@
-import { Navigate } from "react-router"
-import { isAuth } from "../../../utils/userAuth";
+// import { Navigate } from "react-router"
+// import { isAuth } from "../../../utils/userAuth";
 const UserAuth = ({children}) => {
 
   return (
-    isAuth() ? children : <Navigate to={`/`}/>
+    children
+    // !isAuth() ? children : <Navigate to={`/`}/>
   )
 }
 
