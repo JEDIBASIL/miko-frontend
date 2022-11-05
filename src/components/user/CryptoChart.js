@@ -1,7 +1,7 @@
 import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import axios from "axios"
-import { useEffect, useState } from 'react';
-import dateConverter from "../../utils/dateConverter";                                                                                                                                                                                                           
+import { useCallback, useEffect, useState } from 'react';
+import dateConverter from "../../utils/dateConverter";
 // const data = [
 //   {
 //     name: 'Page A',
@@ -49,50 +49,49 @@ import dateConverter from "../../utils/dateConverter";
 
 
 
-const CryptoChart = ({id}) => {
-    const [coinData,setCoinData] = useState([])
-    const config = {
-        headers: {
-          accept: "application/json",
-        },
-      };
+const CryptoChart = ({ id }) => {
+  const [coinData, setCoinData] = useState([])
+  const config = {
+    headers: {
+      accept: "application/json",
+    },
+  };
+  const getChart = useCallback(() => {
+    axios.get(
+      `https://api.coingecko.com/api/v3/coins/${id}/market_chart/range?vs_currency=ngn&from=1660780860&to=${Date.now().toString()}`,
+      config
+    )
+      .then((res) => {
+        let newDataArray = [];
+        for (let index = 0; index < res.data.prices.length; index++) {
+          const newData = {
+            uv: dateConverter(res.data.prices[index][0]),
+            pv: res.data.prices[index][1],
+          }
+          newDataArray = [...newDataArray, newData]
+        }
+        setCoinData(newDataArray);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  })
 
-    const getChart = () =>{
-        axios.get(
-            `https://api.coingecko.com/api/v3/coins/${id}/market_chart/range?vs_currency=ngn&from=1660780860&to=${Date.now().toString()}`,
-            config
-          )
-          .then((res) => {
-            let newDataArray =[];
-            for (let index = 0; index < res.data.prices.length; index++) {
-              const newData = {
-                  uv: dateConverter(res.data.prices[index][0]),
-                  pv: res.data.prices[index][1],
-              }
-                newDataArray =[...newDataArray, newData]
-            }
-            setCoinData(newDataArray);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-      }
+  useEffect(() => {
+    getChart();
+  }, [id, getChart])
+  return (
 
-      useEffect(() =>{
-        getChart();
-      },[id,getChart])
-    return (
-
-        <div className='homeChartContainer'>
-      { id !=="" && <ResponsiveContainer width="100%" height="100%">
+    <div className='homeChartContainer'>
+      {id !== "" && <ResponsiveContainer width="100%" height="100%">
         <LineChart width={300} height={100} data={coinData}>
-        <Tooltip />
+          <Tooltip />
           <Line type="monotone" dataKey="pv" stroke="#8884d8" strokeWidth={2} />
-          <XAxis dataKey="uv"  fontSize={13} textAnchor="middle" label={<h5>ok</h5>}/>
+          <XAxis dataKey="uv" fontSize={13} textAnchor="middle" label={<h5>ok</h5>} />
         </LineChart>
       </ResponsiveContainer>}
-      </div>
-    );
+    </div>
+  );
 }
 
 
