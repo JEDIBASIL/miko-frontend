@@ -1,5 +1,6 @@
 import logo from "../../images/logo.png"
 import {IoLogoFacebook,IoLogoInstagram,IoLogoTwitter,IoLogoDiscord} from "react-icons/io5"
+import { Link as A } from "react-router-dom"
 const Footer = () => {
   return (
     <footer className="footer">
@@ -20,27 +21,27 @@ const Footer = () => {
         </div>
         <ul>
           <h4>Company</h4>
-          <li><a href="">About</a></li>
-          <li><a href="">Privacy and Policy</a></li>
-          <li><a href="">Career</a></li>
+          <li><A to={"/"}>About</A></li>
+          <li><A to={"/"}>Privacy and Policy</A></li>
+          <li><A to={"/"}>Career</A></li>
         </ul>
         <ul>
           <h4>Faq</h4>
-          <li><a href="">Supported Countries</a></li>
-          <li><a href="">Join us on Discord</a></li>
+          <li><A to={"/"}>Supported Countries</A></li>
+          <li><A to={"/"}>Join us on Discord</A></li>
         </ul>
 
         <ul>
           <h4>Products</h4>
-          <li><a href="">Changera</a></li>
-          <li><a href="">Peer to Peer</a></li>
-          <li><a href="">Crypto Cards</a></li>
-          <li><a href="">Partners Program</a></li>
+          <li><A to={"/"}>Changera</A></li>
+          <li><A to={"/"}>Peer to Peer</A></li>
+          <li><A to={"/"}>Crypto Cards</A></li>
+          <li><A to={"/"}>Partners Program</A></li>
         </ul>
 
         <ul>
           <h4>Resources</h4>
-          <li><a href="">Blog</a></li>
+          <li><A to={"/"}>Blog</A></li>
         </ul>
       </div>
       <p className="copyright">© 2022 Miko All rights reserved</p>

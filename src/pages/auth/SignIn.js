@@ -79,7 +79,7 @@ const SignIn = () => {
                             }
                             color={
                                 ((status === "error" || status === "failed") && "red") ||
-                                status === "success" && "teal"
+                                (status === "success" && "teal")
                             }
                             title={<h3>{status.charAt(0).toUpperCase() + status.slice(1)}</h3>}
                         >
@@ -125,7 +125,7 @@ const SignIn = () => {
                             placeholder={"Enter password"}
                             {...form.getInputProps("password")}
                         />
-                        <p className="forgotPasswordLink"> <a href="" >Forgot password</a></p>
+                        <p className="forgotPasswordLink"> <A to={"/auth/sign-up"} >Forgot password</A></p>
 
                         <div className="btn">
                             <Button

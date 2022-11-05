@@ -103,7 +103,7 @@ const SignUp = () => {
             } 
             color={
               ((status === "error" || status === "failed") &&  "red") ||
-              status === "success" &&  "teal"
+              (status === "success" &&  "teal")
             }
             title={<h3>{status.charAt(0).toUpperCase()+status.slice(1)}</h3>}
             >
