@@ -39,12 +39,19 @@ const MarketStats = () => {
         console.log(err);
         setStatus("pending");
       });
-  },[coinDetails.id]);
+  }, [coinDetails.id]);
 
 
 
 
   useEffect(() => {
+
+    const config = {
+      headers: {
+        accept: "application/json",
+      },
+    };
+
     axios
       .get(
         `https://api.coingecko.com/api/v3/coins/markets?vs_currency=ngn&order=market_cap_desc&per_page=20&page=1&sparkline=false`,
@@ -57,7 +64,7 @@ const MarketStats = () => {
         console.log(err);
       });
     getCoin();
-  }, [cryptos, getCoin, config]);
+  }, [cryptos, getCoin]);
 
 
 
