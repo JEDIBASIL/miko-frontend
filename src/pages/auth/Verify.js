@@ -28,7 +28,7 @@ const Verify = () => {
         console.log(err)
         setStatus("error")
       })
-  },[token,status,message])
+  },[token])
   useEffect(() => {
     verify()
   }, [verify]);

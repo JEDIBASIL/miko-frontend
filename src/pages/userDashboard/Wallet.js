@@ -22,7 +22,7 @@ const Wallet = () => {
       .catch((err) => {
         console.log(err);
       });
-  },[config, coins])
+  },[config])
 
   useEffect(() => {
     getCoins();
