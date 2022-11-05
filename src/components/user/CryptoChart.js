@@ -51,12 +51,14 @@ import dateConverter from "../../utils/dateConverter";
 
 const CryptoChart = ({ id }) => {
   const [coinData, setCoinData] = useState([])
-  const config = {
-    headers: {
-      accept: "application/json",
-    },
-  };
+
   const getChart = useCallback(() => {
+    const config = {
+      headers: {
+        accept: "application/json",
+      },
+    };
+
     axios.get(
       `https://api.coingecko.com/api/v3/coins/${id}/market_chart/range?vs_currency=ngn&from=1660780860&to=${Date.now().toString()}`,
       config
@@ -75,7 +77,7 @@ const CryptoChart = ({ id }) => {
       .catch((err) => {
         console.log(err);
       });
-  }, [config,id])
+  }, [id])
 
   useEffect(() => {
     getChart();
