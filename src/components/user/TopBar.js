@@ -12,6 +12,8 @@ const TopBar = ({name}) => {
         <IoNotificationsOutline />
         <p>{name}</p>
       </div>
+
+      
     </div>
   )
 }

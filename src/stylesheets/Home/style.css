@@ -28,7 +28,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 6;
 }
 .navBar .logoAndLinks {
   display: flex;
@@ -48,7 +48,7 @@ body {
 .navBar .logoAndLinks .logo a img {
   width: 45px;
 }
-.navBar ul {
+.navBar .navList {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -77,6 +77,37 @@ body {
   font-weight: 600;
   padding: 12px 25px;
   border-radius: 8px;
+}
+.navBar .burger {
+  font-size: 26px;
+  color: white;
+  z-index: 7;
+  display: none;
+  cursor: pointer;
+}
+.navBar .burger svg {
+  cursor: pointer;
+}
+.navBar .mobileNav {
+  position: absolute;
+  top: 80px;
+  width: 95%;
+  height: calc(100vh - 130px);
+  background-color: black;
+  color: white;
+  z-index: 5;
+  border-radius: 15px;
+  padding: 30px;
+  margin: 0px auto;
+  text-align: center;
+  line-height: 2;
+  display: none;
+}
+.navBar .mobileNav .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .hero {
@@ -550,9 +581,15 @@ body {
   }
 }
 @media screen and (max-width: 899px) {
-  .navBar ul,
+  .navBar .navList,
 .navBar .btn {
     display: none;
+  }
+  .navBar .burger, .navBar .mobileNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
   }
   .hero {
     display: flex;
@@ -664,7 +701,7 @@ body {
     width: 100%;
   }
   .GettingStartedSteps .GettingStartedStepsContainer .stepsContainer .steps img {
-    width: 150px;
+    width: 200px;
   }
   .GettingStartedSteps .GettingStartedStepsContainer .stepsContainer .steps .text {
     text-align: center;

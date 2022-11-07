@@ -6,8 +6,8 @@ import { FcGoogle } from "react-icons/fc"
 import { useForm, zodResolver } from "@mantine/form"
 import { IoCheckmarkSharp, IoAlertOutline, IoCloudOfflineSharp } from "react-icons/io5"
 import { z } from "zod"
-import axios from "axios"
-import { isAuth, setAuthToken } from "../../utils/userAuth"
+// import axios from "axios"
+import { isAuth } from "../../utils/userAuth"
 import { Navigate, Link as A } from "react-router-dom"
 const SignIn = () => {
 
@@ -24,8 +24,14 @@ const SignIn = () => {
             username,
             password
         }
-        setStatus("loading")
-        verification(loginDetails)
+        
+        // verification(loginDetails)
+        if(username && password){
+            console.log("first")
+        setStatus("success")
+        setMessage("Verified")
+        loginDetails && <Navigate to={`/app`} />
+    }
     }
 
     const form = useForm({
@@ -36,19 +42,18 @@ const SignIn = () => {
         }
     })
 
-    const verification = (user) => {
-        axios.post("http://127.0.0.1:8080/api/v1/user/login", user, { withCredentials: true })
-            .then(res => {
-                console.log(res)
-                setStatus(res.data.status)
-                setMessage(res.data.message)
-                res.data.status === "success" && (setAuthToken("rty5", "max") && setAuthToken("WsAQ", res.data.accessToken))
+    // const verification = (user) => {
+    //     axios.post("http://127.0.0.1:8080/api/v1/user/login", user, { withCredentials: true })
+    //         .then(res => {
+    //             setStatus(res.data.status)
+    //             setMessage(res.data.message)
+    //             res.data.status === "success" && (setAuthToken("rty5", "max") && setAuthToken("WsAQ", res.data.accessToken))
 
-            }).catch(err => {
-                console.log(err)
-                setStatus("error")
-            })
-    }
+    //         }).catch(err => {
+    //             console.log(err)
+    //             setStatus("error")
+    //         })
+    // }
 
     return (
         <>
