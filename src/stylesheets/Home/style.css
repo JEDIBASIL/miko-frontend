@@ -114,11 +114,11 @@ body {
   background-color: rgb(1, 1, 2);
   overflow: hidden;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
   width: 100%;
-  padding: 100px 5%;
+  padding: 100px 4%;
   position: relative;
 }
 .hero .backgroundGlass {
@@ -140,12 +140,12 @@ body {
   background-color: rgba(70, 202, 160, 0.294);
 }
 .hero .text {
-  width: 60%;
+  width: 55%;
   z-index: 2;
 }
 .hero .text h1 {
   color: white;
-  font-size: 75px;
+  font-size: 65px;
   font-weight: 900;
   line-height: 1.4;
 }
@@ -172,14 +172,15 @@ body {
 }
 .hero .img {
   z-index: 1;
-  width: 40%;
+  width: 45%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
 }
 .hero .img img {
-  width: 1000px;
+  width: 820px;
+  transform: translateY(50px) translateX(-50px);
 }
 
 .GettingStartedSteps {
@@ -430,7 +431,7 @@ body {
   width: 50%;
 }
 .browserView .image img {
-  width: 750px;
+  width: 700px;
 }
 
 .footer {
@@ -540,7 +541,7 @@ body {
     font-size: 60px;
   }
   .hero .img img {
-    width: 900px;
+    width: 750px;
   }
   .browserView .text h1 {
     font-size: 60px;

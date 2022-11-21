@@ -10,7 +10,7 @@ const TopBar = ({name}) => {
       </A>
       <div className="nameAndNotification">
         <IoNotificationsOutline />
-        <p>{name}</p>
+        <p>{"Mike"}</p>
       </div>
 
       

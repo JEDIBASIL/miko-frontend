@@ -41,7 +41,7 @@ const Coin = () => {
                     <div className='card'>
                         <img src={coinMarket.image.large} alt="" />
                         <h4>{coinMarket.name}</h4>
-                        <h3>{coinMarket.market_data.current_price.usd}</h3>
+                        <h3>{coinMarket.market_data.current_price.usd} USD</h3>
                         <SimpleGrid cols={2} mt={20}>
                             <Button radius={50} color={"major.0"}>Buy</Button>
                             <Button radius={50} color={"major.0"} variant={"outline"}>Sell</Button>

@@ -34,7 +34,7 @@ const UserApp = () => {
     <MantineProvider
       theme={
         {
-          colorScheme: "light",
+          colorScheme: "dark",
           colors: {
             major: ["#464fca", "#464fca", "#464fca"]
           },

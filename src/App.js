@@ -17,7 +17,6 @@ import Buy from "./pages/userDashboard/Buy";
 import Sell from "./pages/userDashboard/Sell";
 import Swap from "./pages/userDashboard/Swap";
 import FundWallet from "./pages/userDashboard/FundWallet";
-import AdminApp from "./components/admin/AdminApp";
 function App() {
   return (
     <Router>
@@ -43,10 +42,6 @@ function App() {
             <Route path="/app/wallet/buy" element={<Buy />}></Route>
             <Route path="/app/wallet/fund" element={<FundWallet />}></Route>
             <Route path="/app/wallet/sell" element={<Sell />}></Route>
-          </Route>
-
-          <Route path="/admin" element={<AdminApp />}>
-    
           </Route>
         </Routes>
       </div>

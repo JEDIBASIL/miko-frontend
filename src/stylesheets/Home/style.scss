@@ -104,9 +104,9 @@ body {
 .hero {
   background-color: rgb(1, 1, 2);
   overflow: hidden;
-  @include flexDisplay(space-between, center, row);
+  @include flexDisplay(center, center, row);
   width: 100%;
-  padding: 100px 5%;
+  padding: 100px 4%;
   position: relative;
   .backgroundGlass {
     position: absolute;
@@ -128,11 +128,11 @@ body {
     }
   }
   .text {
-    width: 60%;
+    width: 55%;
     z-index: 2;
     h1 {
       color: white;
-      font-size: 75px;
+      font-size: 65px;
       font-weight: 900;
       line-height: 1.4;
       span {
@@ -160,10 +160,11 @@ body {
   }
   .img {
     z-index: 1;
-    width: 40%;
+    width: 45%;
     @include flexDisplay(center, center, row);
     img {
-      width: 1000px;
+      width: 820px;
+      transform: translateY(50px) translateX(-50px);
     }
   }
 }
@@ -407,7 +408,7 @@ body {
     @include flexDisplay(center, center, row);
     width: 50%;
     img {
-      width: 750px;
+      width: 700px;
     }
   }
 }
@@ -507,7 +508,7 @@ body {
     }
     .img {
       img {
-        width: 900px;
+        width: 750px;
       }
     }
   }

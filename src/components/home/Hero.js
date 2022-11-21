@@ -1,4 +1,4 @@
-import heroImg from "../../images/heroImg.png"
+import heroImg1 from "../../images/heroImg1.png"
 const Hero = () => {
   return (
     <section className="hero">
@@ -17,7 +17,7 @@ const Hero = () => {
             <button>Get started</button>
        </div>
        <div className="img">
-        <img src={heroImg} alt="" />
+        <img src={heroImg1} alt="" />
        </div>
     </section>
   )
